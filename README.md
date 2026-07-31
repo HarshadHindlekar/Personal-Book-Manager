@@ -37,6 +37,22 @@ A full-stack reading list built with Next.js, Express, MongoDB, and JWT authenti
 
 The frontend runs on `http://localhost:3000` and the API runs on `http://localhost:5000`.
 
+## Deployed application
+
+- Frontend: [personal-book-manager-fe.onrender.com](https://personal-book-manager-fe.onrender.com/)
+- Backend API: [personal-book-manager-dno9.onrender.com](https://personal-book-manager-dno9.onrender.com/)
+- API health check: [/api/health](https://personal-book-manager-dno9.onrender.com/api/health)
+
+Production environment variables:
+
+- Frontend `NEXT_PUBLIC_API_URL` points to the deployed backend URL with `/api`:
+  `https://personal-book-manager-dno9.onrender.com/api`
+- Backend `CLIENT_URL` points to the deployed frontend URL:
+  `https://personal-book-manager-fe.onrender.com`
+
+Database and JWT secrets are configured through the hosting provider's environment
+variables and should not be committed to the repository.
+
 ## Backend architecture
 
 The Express API is organized by responsibility:
@@ -50,6 +66,24 @@ The Express API is organized by responsibility:
 - `be/src/middleware/` - authentication, validation, async errors, and error responses
 - `be/src/models/` - Mongoose database models
 - `be/src/constants/` - shared application constants
+
+## Frontend architecture
+
+The Next.js frontend uses the App Router and reusable feature components:
+
+- `fe/app/` - routes, layouts, global styles, and page composition
+- `fe/app/(auth)/` - shared authentication layout with login and signup routes
+- `fe/components/home/` - landing page hero and book-stack components
+- `fe/components/auth/` - login and signup form components
+- `fe/components/dashboard/` - dashboard container, book form, book cards, statistics, and empty states
+- `fe/components/forms/` - reusable form shell and field components
+- `fe/constants/` - shared home and dashboard display constants
+- `fe/lib/api.ts` - frontend API request helper
+- `fe/lib/validation.ts` - reusable Zod schemas and form types
+- `fe/types/` - shared frontend TypeScript types
+
+Forms use React Hook Form with Zod validation, while Tailwind CSS utility classes
+are used directly in JSX through `className`.
 
 ## Verify the API
 

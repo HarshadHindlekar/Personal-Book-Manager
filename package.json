@@ -1,0 +1,12 @@
+{
+  "name": "personal-book-manager",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm --dir be dev\" \"pnpm --dir fe dev\"",
+    "build": "pnpm --dir be build && pnpm --dir fe build",
+    "typecheck": "pnpm --dir be typecheck && pnpm --dir fe typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

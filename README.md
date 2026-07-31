@@ -36,3 +36,13 @@ A full-stack reading list built with Next.js, Express, MongoDB, and JWT authenti
 6. Run `npm run dev` from the root.
 
 The frontend runs on `http://localhost:3000` and the API runs on `http://localhost:5000`.
+
+## Verify the API
+
+Open `http://localhost:5000/api/health` to check that the backend and MongoDB connection are working. It should return:
+
+```json
+{"status":"ok"}
+```
+
+The API root (`http://localhost:5000/`) does not define a route, so `Cannot GET /` there is expected. Use the frontend at `http://localhost:3000`.

@@ -9,9 +9,30 @@ A full-stack reading list built with Next.js, Express, MongoDB, and JWT authenti
 
 ## Local setup
 
-1. Install dependencies with `npm install` in the root, `fe`, and `be` directories.
-2. Copy `be/.env.example` to `be/.env` and fill in the MongoDB and JWT values.
-3. Copy `fe/.env.example` to `fe/.env.local`.
-4. Run `npm run dev` from the root.
+1. Install the root dependencies:
+
+   ```powershell
+   npm install
+   ```
+
+2. Install the backend dependencies:
+
+   ```powershell
+   cd be
+   npm install
+   cd ..
+   ```
+
+3. Install the frontend dependencies:
+
+   ```powershell
+   cd fe
+   npm install
+   cd ..
+   ```
+
+4. Copy `be/.env.example` to `be/.env` and fill in the MongoDB and JWT values.
+5. Copy `fe/.env.example` to `fe/.env.local`.
+6. Run `npm run dev` from the root.
 
 The frontend runs on `http://localhost:3000` and the API runs on `http://localhost:5000`.

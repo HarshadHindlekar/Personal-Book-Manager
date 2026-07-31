@@ -2,9 +2,9 @@
   "name": "personal-book-manager",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"pnpm --dir be dev\" \"pnpm --dir fe dev\"",
-    "build": "pnpm --dir be build && pnpm --dir fe build",
-    "typecheck": "pnpm --dir be typecheck && pnpm --dir fe typecheck"
+    "dev": "concurrently \"npm --prefix be run dev\" \"npm --prefix fe run dev\"",
+    "build": "npm --prefix be run build && npm --prefix fe run build",
+    "typecheck": "npm --prefix be run typecheck && npm --prefix fe run typecheck"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

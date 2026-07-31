@@ -37,6 +37,20 @@ A full-stack reading list built with Next.js, Express, MongoDB, and JWT authenti
 
 The frontend runs on `http://localhost:3000` and the API runs on `http://localhost:5000`.
 
+## Backend architecture
+
+The Express API is organized by responsibility:
+
+- `be/src/app.ts` - Express middleware and route registration
+- `be/src/server.ts` - database startup, HTTP server, and graceful shutdown
+- `be/src/routes/` - URL definitions only
+- `be/src/controllers/` - request and response handling
+- `be/src/services/` - business logic and database operations
+- `be/src/schemas/` - reusable Zod request validation
+- `be/src/middleware/` - authentication, validation, async errors, and error responses
+- `be/src/models/` - Mongoose database models
+- `be/src/constants/` - shared application constants
+
 ## Verify the API
 
 Open `http://localhost:5000/api/health` to check that the backend and MongoDB connection are working. It should return:

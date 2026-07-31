@@ -2,11 +2,12 @@ import type { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { Types } from "mongoose";
 import { env } from "../config/env.js";
+import { AUTH_COOKIE_NAME } from "../constants/auth.js";
 
 type AuthPayload = { sub: string };
 
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
-  const token = req.cookies?.book_manager_token;
+  const token = req.cookies?.[AUTH_COOKIE_NAME];
 
   if (!token) {
     res.status(401).json({ message: "Authentication required" });

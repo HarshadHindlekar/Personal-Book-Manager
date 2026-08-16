@@ -39,7 +39,7 @@ The frontend runs on `http://localhost:3000` and the API runs on `http://localho
 
 ## Deployed application
 
-- Frontend: [personal-book-manager-fe.onrender.com](https://personal-book-manager-fe.onrender.com/)
+- Frontend: [harshadhindlekar.github.io/Personal-Book-Manager](https://harshadhindlekar.github.io/Personal-Book-Manager/)
 - Backend API: [personal-book-manager-dno9.onrender.com](https://personal-book-manager-dno9.onrender.com/)
 - API health check: [/api/health](https://personal-book-manager-dno9.onrender.com/api/health)
 
@@ -47,8 +47,8 @@ Production environment variables:
 
 - Frontend `NEXT_PUBLIC_API_URL` points to the deployed backend URL with `/api`:
   `https://personal-book-manager-dno9.onrender.com/api`
-- Backend `CLIENT_URL` points to the deployed frontend URL:
-  `https://personal-book-manager-fe.onrender.com`
+- Backend `CLIENT_URL` points to the deployed frontend origin:
+  `https://harshadhindlekar.github.io`
 
 Database and JWT secrets are configured through the hosting provider's environment
 variables and should not be committed to the repository.

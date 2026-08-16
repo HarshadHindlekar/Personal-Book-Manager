@@ -74,6 +74,10 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
+        env:
+          NEXT_PUBLIC_YOUR_VARIABLE: ${{ vars.NEXT_PUBLIC_API_URL }}
+          # If using sensitive keys stored in Secrets:
+          # MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
